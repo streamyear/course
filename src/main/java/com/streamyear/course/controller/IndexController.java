@@ -13,4 +13,5 @@ public class IndexController {
     public String index(){
         return "欢迎您,访问SpringBoot项目!";
     }
+
 }
