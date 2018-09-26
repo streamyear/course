@@ -1,6 +1,7 @@
 package com.streamyear.course.controller;
 
 import com.streamyear.course.common.server.RedisService;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,9 @@ import java.util.Date;
 public class IndexController {
     @Autowired
     private RedisService redisService;
+
+    @Autowired
+    private AmqpTemplate amqpTemplate;
 
     @RequestMapping("/")
     public String index(){
@@ -36,6 +40,17 @@ public class IndexController {
     @RequestMapping("redis")
     public String testRedis(){
         redisService.set("name", "StreamYear");
+        return "ok";
+    }
+
+    /**
+     * 测试ma
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("mq")
+    public String mqTest() throws Exception {
+        amqpTemplate.convertAndSend("sendSMS", "manager", "StreamYearMq内容");
         return "ok";
     }
 
