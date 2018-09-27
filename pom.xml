@@ -25,6 +25,7 @@
         <druid.version>1.0.18</druid.version>
         <slf4j.version>1.7.25</slf4j.version>
         <pagehelper.version>1.2.3</pagehelper.version>
+        <httpClient.version>4.3.1</httpClient.version>
     </properties>
 
     <dependencies>
@@ -99,6 +100,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
+        <!--HttpClient-->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpClient.version}</version>
         </dependency>
 
     </dependencies>
