@@ -1,4 +1,4 @@
-package com.streamyear.course.common.server;
+package com.streamyear.course.common.service;
 
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.CollectionUtils;

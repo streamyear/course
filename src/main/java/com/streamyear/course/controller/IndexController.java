@@ -1,7 +1,7 @@
 package com.streamyear.course.controller;
 
-import com.streamyear.course.common.server.HttpAPIService;
-import com.streamyear.course.common.server.RedisService;
+import com.streamyear.course.common.service.HttpAPIService;
+import com.streamyear.course.common.service.RedisService;
 import com.streamyear.course.entity.User;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

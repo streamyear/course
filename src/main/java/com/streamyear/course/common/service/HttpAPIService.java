@@ -1,4 +1,4 @@
-package com.streamyear.course.common.server;
+package com.streamyear.course.common.service;
 
 import com.streamyear.course.common.entity.HttpResult;
 import org.apache.http.NameValuePair;
