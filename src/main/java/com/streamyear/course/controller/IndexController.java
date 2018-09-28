@@ -1,8 +1,10 @@
 package com.streamyear.course.controller;
 
 import com.streamyear.course.common.service.HttpAPIService;
+import com.streamyear.course.common.service.QuartzService;
 import com.streamyear.course.common.service.RedisService;
 import com.streamyear.course.entity.User;
+import com.streamyear.course.job.TestJob;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +25,9 @@ public class IndexController {
 
     @Autowired
     private HttpAPIService httpAPIService;
+
+    @Autowired
+    private QuartzService quartzService;
 
     @RequestMapping("/")
     public String index(){
@@ -71,6 +76,12 @@ public class IndexController {
     public String httpClient() throws Exception {
         String result = httpAPIService.doGet("http://localhost:9090/testHttpClient");
         return result;
+    }
+
+    @RequestMapping("quartz")
+    public String quartz() throws Exception {
+        quartzService.addJob(TestJob.class,"0/5 * * * * ?");
+        return "ok";
     }
 
 }

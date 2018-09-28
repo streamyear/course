@@ -26,6 +26,7 @@
         <slf4j.version>1.7.25</slf4j.version>
         <pagehelper.version>1.2.3</pagehelper.version>
         <httpClient.version>4.3.1</httpClient.version>
+        <quartzJobs.version>2.2.1</quartzJobs.version>
     </properties>
 
     <dependencies>
@@ -107,6 +108,18 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>${httpClient.version}</version>
+        </dependency>
+
+        <!--quartz-->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz-jobs</artifactId>
+            <version>${quartzJobs.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
         </dependency>
 
     </dependencies>
