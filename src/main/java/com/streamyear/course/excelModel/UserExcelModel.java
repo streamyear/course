@@ -1,11 +1,11 @@
-package com.streamyear.course.entity;
+package com.streamyear.course.excelModel;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.alibaba.excel.metadata.BaseRowModel;
 
 import java.util.Date;
 
-public class User extends BaseRowModel {
+public class UserExcelModel extends BaseRowModel {
     @ExcelProperty(index = 0,value = "编号")
     private Long id;
 
@@ -24,13 +24,13 @@ public class User extends BaseRowModel {
     @ExcelProperty(index = 5,value = "性别")
     private Boolean sex;
 
-    @ExcelProperty(index = 6,value = "生日", format = "yyyy-MM-dd HH:mm:ss")
+    @ExcelProperty(index = 6,value = "生日")
     private Date birthday;
 
-    @ExcelProperty(index = 7,value = "创建时间", format = "yyyy-MM-dd HH:mm:ss")
+    @ExcelProperty(index = 7,value = "创建时间")
     private Date created;
 
-    @ExcelProperty(index = 8,value = "更新时间", format = "yyyy-MM-dd HH:mm:ss")
+    @ExcelProperty(index = 8,value = "更新时间")
     private Date updated;
 
     public Long getId() {
