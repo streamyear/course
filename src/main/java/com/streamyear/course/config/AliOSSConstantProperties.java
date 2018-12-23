@@ -1,6 +1,5 @@
 package com.streamyear.course.config;
 
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
@@ -9,34 +8,18 @@ import org.springframework.stereotype.Component;
  * 阿里云oss上传的配置文件
  */
 @Component
-@PropertySource(value = "classpath:application-oss.properties")
-public class AliOSSConstantProperties implements InitializingBean {
+@PropertySource(value={"classpath:application-oss.properties"},encoding = "utf-8")
+public class AliOSSConstantProperties{
 
-    @Value("accessKeyId")
-    private String accessKeyId;
+    @Value("${accessKeyId}")
+    public String ACCESSKEYID;
 
-    @Value("accessKeySecret")
-    private String accessKeySecret;
+    @Value("${accessKeySecret}")
+    public String ACCESSKEYSECRET;
 
-    @Value("endpoint")
-    private String endpoint;
+    @Value("${endpoint}")
+    public String ENDPOINT;
 
-    @Value("bucketName")
-    private String bucketName;
-
-    public static String ACCESSKEYID;
-
-    public static String ACCESSKEYSECRET;
-
-    public static String ENDPOINT;
-
-    public static String BUCKETNAME;
-
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        ACCESSKEYID = accessKeyId;
-        ACCESSKEYSECRET = accessKeySecret;
-        ENDPOINT = endpoint;
-        BUCKETNAME = bucketName;
-    }
+    @Value("${bucketName}")
+    public String BUCKETNAME;
 }

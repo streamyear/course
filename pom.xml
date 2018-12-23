@@ -25,7 +25,7 @@
         <druid.version>1.1.12</druid.version>
         <slf4j.version>1.7.25</slf4j.version>
         <pagehelper.version>1.2.3</pagehelper.version>
-        <httpClient.version>4.3.1</httpClient.version>
+        <httpClient.version>4.5.6</httpClient.version>
         <quartzJobs.version>2.2.1</quartzJobs.version>
         <commonsIo.version>2.6</commonsIo.version>
         <commonsLang3.version>3.8</commonsLang3.version>
